@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Arena</title>
+    <link rel="stylesheet" href="./estilo.css">
+</head>
+<body>
+
+    <main class="jogo">
+
+        <header class="topo">
+            <img src="./images/pokemon_logo.png" alt="Pokémon" id="logo">
+            <p class="subtitulo">POKÉMON ARENA</p>
+            <h1>Capture seu Pokémon!</h1>
+            <p class="descricao">Prepare-se para uma aventura!</p>
+        </header>
+
+        <section class="painel">
+            <div class="info">
+                <div class="status">
+                    <span class="led"></span>
+                    <span id="estado">AGUARDANDO INÍCIO</span>
+                </div>
+
+                <div class="contador">
+                    <span>🏆 Capturados</span>
+                    <strong id="contador">0</strong>
+                </div>
+            </div>
+
+            <div id="area">
+                <div class="arena-texto">POKÉMON WILD</div>
+                <img src="./images/pokebola.png"
+                     alt="Pokémon"
+                     id="pokebola">
+                <div class="arena-dica">ENCONTRE SEU POKÉMON</div>
+            </div>
+
+            <div class="controles">
+                <button class="btn btn-iniciar" onclick="iniciar()">
+                    ▶ INICIAR
+                </button>
+
+                <button class="btn btn-pausar" onclick="pausar()">
+                    ❚❚ PAUSAR
+                </button>
+
+                <button class="btn btn-trocar" onclick="mudarImagem()">
+                    🔄 TROCAR
+                </button>
+
+                <button class="btn btn-capturar" onclick="capturar()">
+                    ★ CAPTURAR
+                </button>
+            </div>
+
+            <p class="mensagem" id="mensagem">
+                Clique em INICIAR para começar sua aventura!
+            </p>
+        </section>
+
+        <footer>
+            <p>⚡ POKÉMON ARENA <span>•</span> ESCOLHA SEU DESTINO ⚡</p>
+        </footer>
+
+    </main>
+
+    <script src="./logica.js"></script>
+</body>
+</html>

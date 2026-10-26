@@ -1,0 +1,305 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+
+    background:
+    linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.60)),
+    url("./images/fundo.jpg");
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
+.jogo {
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+}
+
+.topo {
+    margin-bottom: 25px;
+}
+
+#logo {
+    width: 230px;
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 5px;
+    filter: drop-shadow(0 0 15px rgba(255, 208, 0, 0.3));
+}
+
+.subtitulo {
+    color: #5de6ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    margin-bottom: 12px;
+}
+
+.topo h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(23px, 5vw, 38px);
+    color: #fff;
+    text-shadow: 0 0 20px rgba(67, 153, 255, 0.6);
+}
+
+.descricao {
+    color: #aab9df;
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.painel {
+    padding: 22px;
+    background: rgba(13, 22, 54, 0.92);
+    border: 2px solid #324e99;
+    border-radius: 22px;
+    box-shadow:
+        0 0 30px rgba(34, 103, 255, 0.2),
+        inset 0 0 25px rgba(52, 101, 255, 0.06);
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.status, .contador {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: #101a3c;
+    border: 1px solid #2e437c;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.led {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #ffbd35;
+    box-shadow: 0 0 10px #ffbd35;
+}
+
+.contador {
+    color: #b9c8ef;
+}
+
+.contador strong {
+    color: #ffdb45;
+    font-size: 17px;
+}
+
+#area {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    border: 3px solid #4a77ed;
+    border-radius: 15px;
+
+    background:
+        radial-gradient(ellipse at 50% 105%, rgba(52, 110, 202, 0.65), transparent 55%),
+        radial-gradient(ellipse at 50% 100%, #182b50, #101a39 70%);
+    
+    box-shadow:
+        0 0 20px rgba(56, 119, 255, 0.25),
+        inset 0 0 35px rgba(44, 116, 255, 0.12);
+}
+
+#area::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 65px;
+    background: rgba(106, 166, 255, 0.25);
+    box-shadow: 0 0 20px #4186ff;
+}
+
+#area::after {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 70px;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    border: 2px solid rgba(94, 165, 255, 0.25);
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(65, 134, 255, 0.12);
+}
+
+#pokebola {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.45));
+    user-select: none;
+    pointer-events: none;
+}
+
+.arena-texto, .arena-dica {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: rgba(154, 192, 255, 0.6);
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.arena-texto {
+    top: 18px;
+}
+
+.arena-dica {
+    bottom: 28px;
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.btn {
+    min-width: 145px;
+    padding: 14px 18px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.15);
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn-iniciar {
+    background: linear-gradient(135deg, #16a66a, #087d55);
+    border-color: #47e6a4;
+    box-shadow: 0 5px 15px rgba(18, 209, 128, 0.2);
+}
+
+.btn-pausar {
+    background: linear-gradient(135deg, #3e6bd7, #2844a3);
+    border-color: #73a5ff;
+    box-shadow: 0 5px 15px rgba(60, 111, 239, 0.2);
+}
+
+.btn-trocar {
+    background: linear-gradient(135deg, #754cdb, #5128a8);
+    border-color: #b59aff;
+    box-shadow: 0 5px 15px rgba(143, 89, 244, 0.2);
+}
+
+.btn-capturar {
+    background: linear-gradient(135deg, #e6a918, #c8790b);
+    border-color: #ffdf6b;
+    color: #241600;
+    box-shadow: 0 5px 15px rgba(255, 187, 43, 0.2);
+}
+
+.mensagem {
+    margin-top: 20px;
+    color: #a9b9e5;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+footer {
+    margin-top: 23px;
+    color: #7184b8;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+footer span {
+    color: #55dfff;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+        align-items: flex-start;
+    }
+
+    .painel {
+        padding: 12px;
+    }
+
+    #area {
+        height: 350px;
+    }
+
+    .info {
+        align-items: stretch;
+    }
+
+    .status, .contador {
+        padding: 9px;
+        font-size: 9px;
+        letter-spacing: 0;
+    }
+
+    .btn {
+        min-width: 42%;
+        flex: 1;
+        padding: 13px 7px;
+        font-size: 10px;
+    }
+
+    .controles {
+        gap: 8px;
+    }
+
+    .mensagem {
+        font-size: 16px;
+    }
+}
